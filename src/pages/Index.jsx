@@ -83,17 +83,17 @@ const Index = () => {
   };
 
   return (
-    <Container className='mt-3'>
+    <Container className='mt-3 container-1'>
       <Row className="mb-3 row-container">
         <Col>
           <Form.Group controlId="undo" className="d-flex flex-column align-items-center form-group-container">
-            <Form.Label className="mb-2">Undo</Form.Label>
+            <Form.Label className="mb-2 fw-bold">Undo</Form.Label>
             <FaUndo onClick={undo} disabled={historyIndex <= 0} className="icon" />
           </Form.Group>
         </Col>
         <Col>
-          <Form.Group controlId="redo" className="d-flex flex-column align-items-center form-group-container">
-            <Form.Label className="mb-2 ">Redo</Form.Label>
+          <Form.Group controlId="redo " className="d-flex flex-column align-items-center form-group-container">
+            <Form.Label className="mb-2 fw-bold">Redo</Form.Label>
             <FaRedo onClick={redo} disabled={historyIndex >= history.length - 1} className="icon" />
           </Form.Group>
         </Col>
@@ -125,7 +125,7 @@ const Index = () => {
 
       <Row className="centered-row">
         <Col md={6} className="mb-5">
-          <Row>
+          <Row className='mt-3'>
             <input
               type="text"
               value={text}
@@ -133,6 +133,7 @@ const Index = () => {
               style={{ fontFamily: selectedFont, fontSize, color: fontColor }}
               placeholder="Type here..."
               ref={textInputRef} 
+              className='text-line'
             />
           </Row>
           {showAdditionalInput && (
@@ -143,10 +144,11 @@ const Index = () => {
                 onChange={handleAdditionalTextChange}
                 style={{ fontFamily: selectedFont, fontSize, color: fontColor, marginTop: '10px' }}
                 placeholder="Additional Text..."
+                className='text-line'
               />
             </Row>
           )}
-          <Row className="left-side mt-5">
+          <Row className="left-side-row ">
             <Button onClick={toggleAdditionalInput}>Add Text</Button>
           </Row>
         </Col>

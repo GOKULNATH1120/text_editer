@@ -13,7 +13,7 @@
   .icon {
     cursor: pointer;
     font-size: 24px;
-    color: gray;
+    color: rgb(95, 89, 89);
   }
   
  
@@ -26,8 +26,15 @@
     padding: 16px;
     margin: 0 auto; 
     max-width: 100%; 
+    
   }
   
-  
-  
-  
+
+  .text-line{
+    border: none;
+    outline: none;
+  }
+
+  .left-side-row {
+    margin-top: 70px;
+  }
