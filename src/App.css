@@ -1,39 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-/* Index.css */
-
-
-  
- /* styles.css */
-
-
-  
-  .centered-input {
-    font-family: Arial;
-    font-size: 16px;
-    color: #000000;
-    border: none;
-    outline: none;
-  }
-  
   
 
-
-
-  /* .left-align-label {
-    text-align: left !important;
-    margin-bottom: 0.5rem; 
-  } */
-
-
-  /* .left-side{
-    margin-top: 30px;
-    margin-left: -570px;
-  } */
-
-  /* styles.css */
-/* styles.css */
 .row-container {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
@@ -49,16 +16,16 @@
     color: gray;
   }
   
- /* styles.css */
+ 
 .centered-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adjust the shadow width */
-    border-radius: 20px; /* Adjust the border radius width */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    border-radius: 20px; 
     padding: 16px;
-    margin: 0 auto; /* Centers the row */
-    max-width: 100%; /* Adjust the maximum width as needed */
+    margin: 0 auto; 
+    max-width: 100%; 
   }
   
   

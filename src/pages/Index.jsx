@@ -38,7 +38,6 @@ const Index = () => {
   const textInputRef = useRef(null);
 
   useEffect(() => {
-    // Focus on the text input when the component mounts
     textInputRef.current.focus();
   }, []);
 
@@ -85,74 +84,73 @@ const Index = () => {
 
   return (
     <Container className='mt-3'>
-<Row className="mb-3 row-container">
-      <Col>
-        <Form.Group controlId="undo" className="d-flex flex-column align-items-center form-group-container">
-          <Form.Label className="mb-2">Undo</Form.Label>
-          <FaUndo onClick={undo} disabled={historyIndex <= 0} className="icon" />
-        </Form.Group>
-      </Col>
-      <Col>
-        <Form.Group controlId="redo" className="d-flex flex-column align-items-center form-group-container">
-          <Form.Label className="mb-2 ">Redo</Form.Label>
-          <FaRedo onClick={redo} disabled={historyIndex >= history.length - 1} className="icon" />
-        </Form.Group>
-      </Col>
+      <Row className="mb-3 row-container">
+        <Col>
+          <Form.Group controlId="undo" className="d-flex flex-column align-items-center form-group-container">
+            <Form.Label className="mb-2">Undo</Form.Label>
+            <FaUndo onClick={undo} disabled={historyIndex <= 0} className="icon" />
+          </Form.Group>
+        </Col>
+        <Col>
+          <Form.Group controlId="redo" className="d-flex flex-column align-items-center form-group-container">
+            <Form.Label className="mb-2 ">Redo</Form.Label>
+            <FaRedo onClick={redo} disabled={historyIndex >= history.length - 1} className="icon" />
+          </Form.Group>
+        </Col>
 
-      <Col>
-        <Form.Group controlId="fontStyle" className="form-group-container">
-          <Form.Label className="fw-bold">Font Style</Form.Label>
-          <Form.Control as="select" onChange={handleFontChange} value={selectedFont}>
-            <option>Arial</option>
-            <option>Times New Roman</option>
-            <option>Courier New</option>
-            {/* Add more font options as needed */}
-          </Form.Control>
-        </Form.Group>
-      </Col>
-      <Col>
-        <Form.Group controlId="fontSize" className="form-group-container">
-          <Form.Label className="fw-bold">Font Size</Form.Label>
-          <Form.Control type="number" min="1" onChange={handleSizeChange} value={parseInt(fontSize)} />
-        </Form.Group>
-      </Col>
-      <Col>
-        <Form.Group controlId="fontColor" className="form-group-container">
-          <Form.Label className="fw-bold">Font Color</Form.Label>
-          <Form.Control type="color" onChange={handleColorChange} value={fontColor} />
-        </Form.Group>
-      </Col>
-    </Row>
-
-
-    <Row className="centered-row">
-  <Col md={6} className="mb-5">
-    <Row>
-      <input
-        type="text"
-        value={text}
-        onChange={handleTextChange}
-        style={{ fontFamily: selectedFont, fontSize, color: fontColor }}
-        placeholder="Type here..."
-        ref={textInputRef} // Attach the ref to the input
-      />
-    </Row>
-    {showAdditionalInput && (
-      <Row className='left-side'>
-        <input
-          type="text"
-          value={additionalText}
-          onChange={handleAdditionalTextChange}
-          style={{ fontFamily: selectedFont, fontSize, color: fontColor, marginTop: '10px' }}
-          placeholder="Additional Text..."
-        />
+        <Col>
+          <Form.Group controlId="fontStyle" className="form-group-container">
+            <Form.Label className="fw-bold">Font Style</Form.Label>
+            <Form.Control as="select" onChange={handleFontChange} value={selectedFont}>
+              <option>Arial</option>
+              <option>Times New Roman</option>
+              <option>Courier New</option>
+            </Form.Control>
+          </Form.Group>
+        </Col>
+        <Col>
+          <Form.Group controlId="fontSize" className="form-group-container">
+            <Form.Label className="fw-bold">Font Size</Form.Label>
+            <Form.Control type="number" min="1" onChange={handleSizeChange} value={parseInt(fontSize)} />
+          </Form.Group>
+        </Col>
+        <Col>
+          <Form.Group controlId="fontColor" className="form-group-container">
+            <Form.Label className="fw-bold">Font Color</Form.Label>
+            <Form.Control type="color" onChange={handleColorChange} value={fontColor} />
+          </Form.Group>
+        </Col>
       </Row>
-    )}
-    <Row className="left-side mt-5">
-      <Button onClick={toggleAdditionalInput}>Add Text</Button>
-    </Row>
-  </Col>
-</Row>
+
+
+      <Row className="centered-row">
+        <Col md={6} className="mb-5">
+          <Row>
+            <input
+              type="text"
+              value={text}
+              onChange={handleTextChange}
+              style={{ fontFamily: selectedFont, fontSize, color: fontColor }}
+              placeholder="Type here..."
+              ref={textInputRef} 
+            />
+          </Row>
+          {showAdditionalInput && (
+            <Row className='left-side'>
+              <input
+                type="text"
+                value={additionalText}
+                onChange={handleAdditionalTextChange}
+                style={{ fontFamily: selectedFont, fontSize, color: fontColor, marginTop: '10px' }}
+                placeholder="Additional Text..."
+              />
+            </Row>
+          )}
+          <Row className="left-side mt-5">
+            <Button onClick={toggleAdditionalInput}>Add Text</Button>
+          </Row>
+        </Col>
+      </Row>
 
     </Container>
   );
