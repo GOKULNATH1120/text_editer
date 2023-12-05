@@ -10,14 +10,14 @@ import {
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/index",
+      path: "/",
       element: <Index />,
     },
 
   ]);
   return (
     <div className="App">
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </div>
   );
 }
